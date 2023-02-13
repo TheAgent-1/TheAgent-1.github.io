@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<!-- THIS IS THE DISARMED PAGE -->
+
+<head>
+    <meta name="author" content="Jacob Croul">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Launcher</title>
+</head>
+
+<body>
+    <div class="center fontA">
+        <h1>Rocket Launcher</h1>
+        <div class="form">
+            <input type="text" placeholder="Username" id="Username"><br>
+            <input type="password" placeholder="Password" id="Password"><br>
+
+            <h4>The launcher state is: <br><span style="color: #FF5F56;">DISARMED</span> </h4>
+        </div>
+        <hr>
+        <input type="button" value="Arm" onclick="armScpt()" id="armbtn">
+    </div>
+</body>
+
+<style>
+    /* ---Class styles--- */
+    .center {
+        text-align: center;
+    }
+
+    .fontA {
+        font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    }
+
+    /* ### ID styles ### */
+    /* # Desktop # */
+    
+
+
+    /* arm button */
+    #armbtn {
+        padding: 0.7cm;
+        background-color: #27C93F;
+        border: 3px solid #27C93F;
+        border-radius: 8px;
+        transition-duration: 0.2s;
+    }
+
+    #armbtn:hover {
+        background-color: white;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        /* # Mobile # */
+        /* user and pass */
+    #Username, #Password {
+        width: 200px;
+        font-size: 30px;
+        }
+
+        /* arm button */
+        #armbtn {
+            font-size: 2cm;
+            padding: 1cm;
+            background-color: #27C93F;
+            border: 6px solid #27C93F;
+            border-radius: 8px;
+            transition-duration: 0.2s;
+        }
+
+        #armbtn:hover {
+            background-color: white;
+        }
+    }
+</style>
+
+<script>
+    function armScpt() {
+        let testUser = "test";
+        let testPass = "pass";
+        let User1 = "Jacob";
+        let Pass1 = "jc705";
+        let User2 = "";
+        let Pass2 = "";
+
+        if (document.getElementById("Username").value == testUser &&
+            document.getElementById("Password").value == testPass) {
+
+            const response = confirm("Are you sure?");
+            if (response) {
+                window.location.assign("/armed.html");
+            } else {
+                location.reload();
+            }
+
+        }
+        else {
+            alert("Incorrect Username or Password");
+            location.reload();
+        }
+    }
+</script>
