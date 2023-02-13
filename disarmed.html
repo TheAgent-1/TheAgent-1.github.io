@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- THIS IS THE DISARMED PAGE -->
 
@@ -16,6 +15,7 @@
             <input type="password" placeholder="Password" id="Password"><br>
 
             <h4>The launcher state is: <br><span style="color: #FF5F56;">DISARMED</span> </h4>
+            <a href="/index.html">«Back</a>
         </div>
         <hr>
         <input type="button" value="Arm" onclick="armScpt()" id="armbtn">
@@ -34,7 +34,7 @@
 
     /* ### ID styles ### */
     /* # Desktop # */
-    
+
 
 
     /* arm button */
@@ -54,9 +54,9 @@
 
         /* # Mobile # */
         /* user and pass */
-    #Username, #Password {
-        width: 200px;
-        font-size: 30px;
+        #Username, #Password {
+            width: 200px;
+            font-size: 30px;
         }
 
         /* arm button */
@@ -79,11 +79,7 @@
     function armScpt() {
         let testUser = "test";
         let testPass = "pass";
-        let User1 = "Jacob";
-        let Pass1 = "jc705";
-        let User2 = "";
-        let Pass2 = "";
-
+        
         if (document.getElementById("Username").value == testUser &&
             document.getElementById("Password").value == testPass) {
 
