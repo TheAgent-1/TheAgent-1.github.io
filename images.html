@@ -35,6 +35,8 @@
         font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     }
 
+
+    @media only screen and (min-width: 600px) {
     .grid-container {
         background-color: #c2c2c2;
         display: grid;
@@ -43,9 +45,29 @@
     
     .item1{
         grid-column-start: 1;
+        
     }
 
     .item2{
         grid-column-start: 2;
     }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container{
+        background-color: #c2c2c2;
+        display: grid;
+        gap: 50px 100px
+    }
+
+    .item1{
+        grid-column-start: 1;
+        
+    }
+
+    .item2{
+        grid-column-start: 1;
+        
+    }
+}
 </style>
