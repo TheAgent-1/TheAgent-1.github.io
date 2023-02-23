@@ -13,17 +13,18 @@
         <a href="/index.html">
             <h3>&#171;Back</h3>
         </a>
-        <div class="grid-container">
-            <div class="item1">
-                <img src="/images/IMG_0842.JPG" alt="" width="250">
+
+        <div class="row">
+            <div class="column">
+                <img src="images/IMG_0842.JPG" alt="" style="width: 56%;">
                 <p>Prototype of the track system</p>
             </div>
 
-            <div class="item2">
-                <img src="/images/IMG_0856.JPG" alt="" width="250">
+            <div class="column">
+                <img src="images/IMG_0856.JPG" alt="" style="width: 56%;">
                 <p>Tapping into ABS 3d plastic for track hub</p>
             </div>
-        </div>
+        </div>        
         <p>If no images appear, there has been an error</p>
     </div>
 </body>
@@ -35,44 +36,14 @@
         font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     }
 
-    .item1,.item2{
-        align-self: center;
-    }
-
-
-
-    @media only screen and (min-width: 600px) {
-    .grid-container {
-        background-color: #c2c2c2;
-        display: grid;
-        gap: 50px 100px
+    .row {
+        display: flex;
     }
     
-    .item1{
-        grid-column-start: 1;
-        
+    .column {
+        width: 33.33%;
+        padding: 5px;
     }
 
-    .item2{
-        grid-column-start: 2;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .grid-container{
-        background-color: #c2c2c2;
-        display: grid;
-        gap: 50px 100px
-    }
-
-    .item1{
-        grid-column-start: 1;
-        
-    }
-
-    .item2{
-        grid-column-start: 1;
-        
-    }
-}
+    
 </style>
