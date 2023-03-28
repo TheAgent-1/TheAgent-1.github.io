@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+</head>
+<body>
+    <div class="fontA">
+        <a href="/index.html">
+            <h3>&#171;Back</h3>
+        </a>
+    </div>
+    <div class="row">
+        <div class="column">
+            <video width="300" controls muted>
+                <source src="videos/fiberglasscutting.mp4">
+            </video>
+        </div>
+
+        <div class="column">
+            <video width="300" controls muted>
+                <source src="videos/launchtilttest.mp4">
+            </video>
+        </div>
+        
+    </div>
+</body>
+</html>
+
+<style>
+
+.fontA {
+        font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    }
+
+    .row {
+        display: flex;
+    }
+    
+    .column {
+        width: 33.33%;
+        padding: 5px;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .row {
+        display: block;
+    }
+    
+    .column {
+        width: 100%;
+        padding: 5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    }
+
+</style>
