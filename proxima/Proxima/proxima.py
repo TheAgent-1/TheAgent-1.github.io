@@ -162,7 +162,7 @@ class proximaCommand:
             from googlesearch import search
         except ImportError:
             print("No module named 'google' found")
-        for j in search(query, num=10):
+        for j in search(query):
             print(j)
         return f"" + return_msg + "you can find the results in your console"
     
