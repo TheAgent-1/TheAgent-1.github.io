@@ -114,7 +114,7 @@ def RunProxima(mode):
         elif "vr" in command or "virtual reality" in command:
             say(proximaCommand.start_vr())
 
-        elif "siege" in command:
+        elif "siege" in command or "r6" in command or "r6s" in command:
             proximaCommand.r6siege()
 
         elif "extraction" in command:

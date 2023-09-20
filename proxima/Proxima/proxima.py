@@ -133,7 +133,7 @@ class proximaCommand:
     def r6siege():
         device_name = platform.uname().node
         if device_name == "Jacobs-Laptop":
-            return "Sorry, your device will not run Rainbow 6 Siege"
+            return f"Sorry, your device will not run Rainbow 6 Siege"
         elif device_name == "Jacobs-PC":
             program1 = "steam://rungameid/359550"
             program2 = r"C:/Users/jacob/AppData/Local/Discord/Update.exe"

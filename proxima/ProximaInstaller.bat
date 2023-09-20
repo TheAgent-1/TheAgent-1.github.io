@@ -1,5 +1,19 @@
 @echo off
 title Proxima Installer
+echo Proxima Installer
+echo (I)nstall or (U)ninstall?
+echo If you wish to close, please exit this window
+
+echo I or U
+set /p s= Input: 
+echo Input is: %s%
+
+if %s% == I goto install
+if %s% == U goto uninstall
+
+
+
+:install
 if not exist "c:\Proxima" (
 mkdir "c:\Proxima"
 echo Proxima path made
@@ -27,6 +41,17 @@ python -m pip install -r requirements.txt
 mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima\main.py"
 echo made shortcut on Desktop
 cls
+goto exit
 
 
+:uninstall
+if exist "c:\Proxima" (
+    rmdir /s /q "c:\Proxima"
+)
 
+if exist "%USERPROFILE%\Desktop\Proxima.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima.*"
+)
+
+:exit
+cls
