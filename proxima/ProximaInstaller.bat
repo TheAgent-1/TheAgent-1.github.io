@@ -23,17 +23,17 @@ cd "c:\Proxima"
 
 
 if not exist "main.py" (
-curl.exe -o main.py https://github.com/TheAgent-1/Proxima/raw/main/main.py
+curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/main.py
 echo got main.py
 )
 
 if not exist "proxima.py" (
-curl.exe -o proxima.py https://github.com/TheAgent-1/Proxima/raw/main/proxima.py
+curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/proxima.py
 echo got proxima.py
 )
 
 if not exist "requirements.txt" (
-curl.exe -o requirements.txt https://github.com/TheAgent-1/Proxima/raw/main/requirements.txt
+curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/main/requirements.txt
 echo got requirements.txt
 )
 
