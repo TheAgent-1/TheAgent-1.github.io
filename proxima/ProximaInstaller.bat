@@ -105,6 +105,8 @@ goto exit
 :archivinst
 echo Version Select
 echo Select the desired Archival version
+echo Allowed Inputs:
+echo 1-1
 
 set /p s= Input: 
 echo Input is: %s%
