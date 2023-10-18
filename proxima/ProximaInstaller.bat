@@ -60,15 +60,15 @@ if exist "%USERPROFILE%\Desktop\Proxima.*" (
 echo Confirmation?
 echo You have entered the secret dev password
 echo Do you intend on downloading the experimental testing build
-echo (Y)es, (N)o or (C)ancel
+echo (Y)es, (A)rchive or (N)o
 echo Selecting no will bring you to the Archive screen
 
 set /p s= Input: 
 echo Input is: %s%
 
 if %s% == Y goto testinst
-if %s% == N goto archivinst
-if %s% == C goto main-screen
+if %s% == A goto archivinst
+if %s% == N goto main-screen
 
 
 :testinst
