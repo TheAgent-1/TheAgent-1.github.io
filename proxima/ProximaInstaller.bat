@@ -57,15 +57,17 @@ if exist "%USERPROFILE%\Desktop\Proxima.*" (
 
 
 :confirm
-echo Confirm, are you wanting to download test installation?
-echo (Y)es (N)o
-echo If you choose no, you will be redirected to archive installations
-echo If you do not intend to download experimental/beta versions, (C)ancel
-set /p s= Input:
+echo Confirmation?
+echo You have entered the secret dev password
+echo Do you intend on downloading the experimental testing build
+echo (Y)es, (N)o or (C)ancel
+echo Selecting no will bring you to the Archive screen
+
+set /p s= Input: 
 echo Input is: %s%
 
 if %s% == Y goto testinst
-if %s% == N goto archivinst_1-1
+if %s% == N goto archivinst
 if %s% == C goto main-screen
 
 
@@ -79,17 +81,17 @@ cd "c:\Proxima-TEST"
 
 
 if not exist "main.py" (
-curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/test/V1.1-ASCII/main.py
+curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/test/main.py
 echo got main.py
 )
 
 if not exist "proxima.py" (
-curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/test/V1.1-ASCII/proxima.py
+curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/test/proxima.py
 echo got proxima.py
 )
 
 if not exist "requirements.txt" (
-curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/main/test/V1.1-ASCII/requirements.txt
+curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/test/requirements.txt
 echo got requirements.txt
 )
 
@@ -100,7 +102,17 @@ cls
 goto exit
 
 
-:archivinst_1-1
+:archivinst
+echo Version Select
+echo Select the desired Archival version
+
+set /p s= Input: 
+echo Input is: %s%
+
+if %s% == 1-1 goto 1-1
+
+
+:1-1
 if not exist "c:\Proxima-ARCHIVE" (
 mkdir "c:\Proxima-ARCHIVE"
 echo Proxima-ARCHIVE path made
@@ -110,17 +122,17 @@ cd "c:\Proxima-ARCHIVE"
 
 
 if not exist "main.py" (
-curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/archive/1-1/main.py
+curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/archive/1-1/main.py
 echo got main.py
 )
 
 if not exist "proxima.py" (
-curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/archive/1-1/proxima.py
+curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/archive/1-1/proxima.py
 echo got proxima.py
 )
 
 if not exist "requirements.txt" (
-curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/main/archive/1-1/requirements.txt
+curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/archive/1-1/requirements.txt
 echo got requirements.txt
 )
 
@@ -129,6 +141,7 @@ mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima-ARCHIVE\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
+
 
 :exit
 cls
