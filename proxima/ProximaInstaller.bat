@@ -10,6 +10,7 @@ echo Input is: %s%
 
 if %s% == I goto install
 if %s% == U goto uninstall
+if %s% == SPICYPILLOW goto testinst
 
 
 
@@ -52,6 +53,37 @@ if exist "c:\Proxima" (
 if exist "%USERPROFILE%\Desktop\Proxima.*" (
     del /q "%USERPROFILE%\Desktop\Proxima.*"
 )
+
+
+:testinst
+if not exist "c:\Proxima-TEST" (
+mkdir "c:\Proxima-TEST"
+echo Proxima-TEST path made
+)
+cd "c:\Proxima-TEST"
+
+
+
+if not exist "main.py" (
+curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/test/V1.1-ASCII/main.py
+echo got main.py
+)
+
+if not exist "proxima.py" (
+curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/test/V1.1-ASCII/proxima.py
+echo got proxima.py
+)
+
+if not exist "requirements.txt" (
+curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/main/test/V1.1-ASCII/requirements.txt
+echo got requirements.txt
+)
+
+python -m pip install -r requirements.txt
+mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima-TEST\main.py"
+echo made shortcut on Desktop
+cls
+goto exit
 
 :exit
 cls
