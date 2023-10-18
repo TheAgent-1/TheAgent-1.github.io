@@ -1,4 +1,5 @@
 @echo off
+:main-screen
 title Proxima Installer
 echo Proxima Installer
 echo (I)nstall or (U)ninstall?
@@ -10,7 +11,7 @@ echo Input is: %s%
 
 if %s% == I goto install
 if %s% == U goto uninstall
-if %s% == SPICYPILLOW goto testinst
+if %s% == SPICYPILLOW goto confirm
 
 
 
@@ -55,6 +56,19 @@ if exist "%USERPROFILE%\Desktop\Proxima.*" (
 )
 
 
+:confirm
+echo Confirm, are you wanting to download test installation?
+echo (Y)es (N)o
+echo If you choose no, you will be redirected to archive installations
+echo If you do not intend to download experimental/beta versions, (C)ancel
+set /p s= Input:
+echo Input is: %s%
+
+if %s% == Y goto testinst
+if %s% == N goto archivinst_1-1
+if %s% == C goto main-screen
+
+
 :testinst
 if not exist "c:\Proxima-TEST" (
 mkdir "c:\Proxima-TEST"
@@ -81,6 +95,37 @@ echo got requirements.txt
 
 python -m pip install -r requirements.txt
 mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima-TEST\main.py"
+echo made shortcut on Desktop
+cls
+goto exit
+
+
+:archivinst_1-1
+if not exist "c:\Proxima-ARCHIVE" (
+mkdir "c:\Proxima-ARCHIVE"
+echo Proxima-ARCHIVE path made
+)
+cd "c:\Proxima-ARCHIVE"
+
+
+
+if not exist "main.py" (
+curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/archive/1-1/main.py
+echo got main.py
+)
+
+if not exist "proxima.py" (
+curl.exe -o proxima.py https://raw.githubusercontent.com/TheAgent-1/Proxima/main/archive/1-1/proxima.py
+echo got proxima.py
+)
+
+if not exist "requirements.txt" (
+curl.exe -o requirements.txt https://raw.githubusercontent.com/TheAgent-1/Proxima/main/archive/1-1/requirements.txt
+echo got requirements.txt
+)
+
+python -m pip install -r requirements.txt
+mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima-ARCHIVE\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
