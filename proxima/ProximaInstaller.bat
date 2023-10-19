@@ -10,7 +10,7 @@ set /p s= Input:
 echo Input is: %s%
 
 if %s% == I goto install
-if %s% == U goto uninstall
+if %s% == U goto uninst-confirm
 if %s% == SPICYPILLOW goto confirm
 
 
@@ -46,13 +46,46 @@ cls
 goto exit
 
 
-:uninstall
+:uninst-confirm
+echo Confirmation?
+echo Which version would you like to uninstall
+echo (M)ain, (T)est or (A)rchive
+
+set /p s= Input: 
+echo Input is: %s%
+
+if %s% == M goto m-uninstall
+if %s% == T goto t-uninstall
+if %s% == A goto a-uninstall
+
+
+:m-uninstall
 if exist "c:\Proxima" (
     rmdir /s /q "c:\Proxima"
 )
 
 if exist "%USERPROFILE%\Desktop\Proxima.*" (
     del /q "%USERPROFILE%\Desktop\Proxima.*"
+)
+
+
+:t-uninstall
+if exist "c:\Proxima-TEST" (
+    rmdir /s /q "c:\Proxima-TEST"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-test.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-test.*"
+)
+
+
+:a-uninstall
+if exist "c:\Proxima-ARCHIVE" (
+    rmdir /s /q "c:\Proxima"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-archive-*.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-archive-*.*"
 )
 
 
@@ -140,7 +173,7 @@ echo got requirements.txt
 )
 
 python -m pip install -r requirements.txt
-mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima-ARCHIVE\main.py"
+mklink %USERPROFILE%\Desktop\Proxima-ARCHIVE "C:\Proxima-ARCHIVE\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
