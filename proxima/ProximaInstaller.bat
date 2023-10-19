@@ -13,6 +13,20 @@ echo Input is: %s%
 if %s% == I goto install
 if %s% == U goto uninst-confirm
 if %s% == SPICYPILLOW goto confirm
+if %s% == Josh goto meme-instance
+if %s% == josh goto meme-instance
+if %s% == PhoneticDragon goto meme-instance
+if %s% == Phoneticdragon goto meme-instance
+if %s% == phoneticDragon goto meme-instance
+if %s% == phoneticdragon goto meme-instance
+if %s% == Phonetic goto meme-instance
+if %s% == phonetic goto meme-instance
+if %s% == Dragon goto meme-instance
+if %s% == dragon goto meme-instance
+if %s% == PD goto meme-instance
+if %s% == Pd goto meme-instance
+if %s% == pD goto meme-instance
+if %s% == pd goto meme-instance
 
 
 
@@ -61,20 +75,20 @@ if %s% == T goto t-uninstall
 if %s% == A goto a-uninstall
 if %s% == All goto uninstall
 if %s% == Al echo Wot mate?
-if %s% == Josh goto exit
-if %s% == josh goto exit
-if %s% == PhoneticDragon goto exit
-if %s% == Phoneticdragon goto exit
-if %s% == phoneticDragon goto exit
-if %s% == phoneticdragon goto exit
-if %s% == Phonetic goto exit
-if %s% == phonetic goto exit
-if %s% == Dragon goto exit
-if %s% == dragon goto exit
-if %s% == PD goto exit
-if %s% == Pd goto exit
-if %s% == pD goto exit
-if %s% == pd goto exit
+if %s% == Josh goto meme-instance
+if %s% == josh goto meme-instance
+if %s% == PhoneticDragon goto meme-instance
+if %s% == Phoneticdragon goto meme-instance
+if %s% == phoneticDragon goto meme-instance
+if %s% == phoneticdragon goto meme-instance
+if %s% == Phonetic goto meme-instance
+if %s% == phonetic goto meme-instance
+if %s% == Dragon goto meme-instance
+if %s% == dragon goto meme-instance
+if %s% == PD goto meme-instance
+if %s% == Pd goto meme-instance
+if %s% == pD goto meme-instance
+if %s% == pd goto meme-instance
 
 :m-uninstall
 if exist "c:\Proxima" (
@@ -103,6 +117,20 @@ if %s% == Y goto testinst
 if %s% == A goto archivinst
 if %s% == N goto main-screen
 if %s% == SPICYPILLOW echo That won't work twice.
+if %s% == Josh goto meme-instance
+if %s% == josh goto meme-instance
+if %s% == PhoneticDragon goto meme-instance
+if %s% == Phoneticdragon goto meme-instance
+if %s% == phoneticDragon goto meme-instance
+if %s% == phoneticdragon goto meme-instance
+if %s% == Phonetic goto meme-instance
+if %s% == phonetic goto meme-instance
+if %s% == Dragon goto meme-instance
+if %s% == dragon goto meme-instance
+if %s% == PD goto meme-instance
+if %s% == Pd goto meme-instance
+if %s% == pD goto meme-instance
+if %s% == pd goto meme-instance
 
 
 :testinst
@@ -159,6 +187,20 @@ set /p s= Input:
 echo Input is: %s%
 
 if %s% == 1-1 goto 1-1
+if %s% == Josh goto meme-instance
+if %s% == josh goto meme-instance
+if %s% == PhoneticDragon goto meme-instance
+if %s% == Phoneticdragon goto meme-instance
+if %s% == phoneticDragon goto meme-instance
+if %s% == phoneticdragon goto meme-instance
+if %s% == Phonetic goto meme-instance
+if %s% == phonetic goto meme-instance
+if %s% == Dragon goto meme-instance
+if %s% == dragon goto meme-instance
+if %s% == PD goto meme-instance
+if %s% == Pd goto meme-instance
+if %s% == pD goto meme-instance
+if %s% == pd goto meme-instance
 
 
 :1-1
@@ -228,11 +270,29 @@ if exist "c:\Proxima-ARCHIVE-1-1" (
 if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*" (
     del /q "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*"
 )
+
+if exist "c:\Proxima-ARCHIVE-1-2" (
+    rmdir /s /q "c:\Proxima-ARCHIVE-1-2"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-2.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-2.*"
+)
+
+if exist "c:\Proxima-ARCHIVE-1-3" (
+    rmdir /s /q "c:\Proxima-ARCHIVE-1-3"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-3.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-3.*"
+)
 cls
 goto exit
 
 
-:meme-install
+:meme-instance
+title Impending Doom...
+cls
 echo What have you done...
 timeout /t 10 /nobreak
 goto exit
