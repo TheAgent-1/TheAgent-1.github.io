@@ -125,8 +125,8 @@ if exist "c:\Proxima-TEST" (
     rmdir /s /q "c:\Proxima-TEST"
 )
 
-if exist "%USERPROFILE%\Desktop\Proxima-test.*" (
-    del /q "%USERPROFILE%\Desktop\Proxima-test.*"
+if exist "%USERPROFILE%\Desktop\Proxima-TEST.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-TEST.*"
 )
 cls
 goto exit
