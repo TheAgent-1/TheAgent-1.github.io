@@ -60,7 +60,7 @@ if exist "%USERPROFILE%\Desktop\Proxima.*" (
 echo Confirmation?
 echo You have entered the secret dev password
 echo Do you intend on downloading the experimental testing build
-echo (Y)es, (A)rchive or (N)o
+echo (Y)es, (A)rchive, (N)o, or (U)ninstall
 echo Selecting no will bring you to the Archive screen
 
 set /p s= Input: 
@@ -69,6 +69,7 @@ echo Input is: %s%
 if %s% == Y goto testinst
 if %s% == A goto archivinst
 if %s% == N goto main-screen
+if %s% == U goto testuninstall
 
 
 :testinst
@@ -96,7 +97,7 @@ echo got requirements.txt
 )
 
 python -m pip install -r requirements.txt
-mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima-TEST\main.py"
+mklink %USERPROFILE%\Desktop\Proxima-TEST "C:\Proxima-TEST\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
@@ -144,6 +145,15 @@ echo made shortcut on Desktop
 cls
 goto exit
 
+:testuninstall
+if exist "c:\Proxima-TEST" (
+    rmdir /s /q "c:\Proxima-TEST"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-TEST.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-TEST.*"
+)
+goto exit
 
 :exit
 cls
