@@ -107,8 +107,7 @@ cls
 echo Confirmation?
 echo You have entered the secret dev password
 echo Do you intend on downloading the experimental testing build
-echo (Y)es, (A)rchive or (N)o
-echo Selecting no will bring you to the Archive screen
+echo (Y)es, (N)o or (A)rchive
 
 set /p s= Input: 
 echo Input is: %s%
