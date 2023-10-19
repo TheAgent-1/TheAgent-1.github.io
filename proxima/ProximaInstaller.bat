@@ -50,7 +50,7 @@ goto exit
 cls
 echo Confirmation?
 echo Which version would you like to uninstall
-echo (M)ain, (T)est or (A)rchive
+echo (M)ain, (T)est, (A)rchive or (All)
 
 set /p s= Input: 
 echo Input is: %s%
@@ -58,7 +58,8 @@ echo Input is: %s%
 if %s% == M goto m-uninstall
 if %s% == T goto t-uninstall
 if %s% == A goto a-uninstall
-
+if %s% == All goto uninstall
+if %s% == Al echo Wot mate?
 
 :m-uninstall
 if exist "c:\Proxima" (
@@ -77,7 +78,7 @@ cls
 echo Confirmation?
 echo You have entered the secret dev password
 echo Do you intend on downloading the experimental testing build
-echo (Y)es, (A)rchive, (N)o, or (U)ninstall
+echo (Y)es, (A)rchive or (N)o
 echo Selecting no will bring you to the Archive screen
 
 set /p s= Input: 
@@ -86,7 +87,6 @@ echo Input is: %s%
 if %s% == Y goto testinst
 if %s% == A goto archivinst
 if %s% == N goto main-screen
-if %s% == U goto testuninstall
 
 
 :testinst
@@ -177,6 +177,34 @@ goto exit
 
 
 :a-1-1-uninstall
+if exist "c:\Proxima-ARCHIVE-1-1" (
+    rmdir /s /q "c:\Proxima-ARCHIVE-1-1"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*"
+)
+cls
+goto exit
+
+
+:uninstall
+if exist "c:\Proxima" (
+    rmdir /s /q "c:\Proxima"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima.*"
+)
+
+if exist "c:\Proxima-TEST" (
+    rmdir /s /q "c:\Proxima-TEST"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-TEST.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-TEST.*"
+)
+
 if exist "c:\Proxima-ARCHIVE-1-1" (
     rmdir /s /q "c:\Proxima-ARCHIVE-1-1"
 )
