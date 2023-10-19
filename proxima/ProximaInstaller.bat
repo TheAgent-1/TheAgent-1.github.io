@@ -68,26 +68,8 @@ if exist "c:\Proxima" (
 if exist "%USERPROFILE%\Desktop\Proxima.*" (
     del /q "%USERPROFILE%\Desktop\Proxima.*"
 )
-
-
-:t-uninstall
-if exist "c:\Proxima-TEST" (
-    rmdir /s /q "c:\Proxima-TEST"
-)
-
-if exist "%USERPROFILE%\Desktop\Proxima-test.*" (
-    del /q "%USERPROFILE%\Desktop\Proxima-test.*"
-)
-
-
-:a-uninstall
-if exist "c:\Proxima-ARCHIVE" (
-    rmdir /s /q "c:\Proxima"
-)
-
-if exist "%USERPROFILE%\Desktop\Proxima-archive-*.*" (
-    del /q "%USERPROFILE%\Desktop\Proxima-archive-*.*"
-)
+cls
+goto exit
 
 
 :confirm
@@ -138,6 +120,18 @@ cls
 goto exit
 
 
+:t-uninstall
+if exist "c:\Proxima-TEST" (
+    rmdir /s /q "c:\Proxima-TEST"
+)
+
+if exist "%USERPROFILE%\Desktop\Proxima-test.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-test.*"
+)
+cls
+goto exit
+
+
 :archivinst
 cls
 echo Version Select
@@ -176,19 +170,21 @@ echo got requirements.txt
 )
 
 python -m pip install -r requirements.txt
-mklink %USERPROFILE%\Desktop\Proxima-ARCHIVE "C:\Proxima-ARCHIVE\main.py"
+mklink %USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1 "C:\Proxima-ARCHIVE\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
 
-:testuninstall
-if exist "c:\Proxima-TEST" (
-    rmdir /s /q "c:\Proxima-TEST"
+
+:a-1-1-uninstall
+if exist "c:\Proxima-ARCHIVE-1-1" (
+    rmdir /s /q "c:\Proxima-ARCHIVE-1-1"
 )
 
-if exist "%USERPROFILE%\Desktop\Proxima-TEST.*" (
-    del /q "%USERPROFILE%\Desktop\Proxima-TEST.*"
+if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*" (
+    del /q "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*"
 )
+cls
 goto exit
 
 :exit
