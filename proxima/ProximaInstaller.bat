@@ -47,6 +47,7 @@ goto exit
 
 
 :uninst-confirm
+cls
 echo Confirmation?
 echo Which version would you like to uninstall
 echo (M)ain, (T)est or (A)rchive
@@ -90,6 +91,7 @@ if exist "%USERPROFILE%\Desktop\Proxima-archive-*.*" (
 
 
 :confirm
+cls
 echo Confirmation?
 echo You have entered the secret dev password
 echo Do you intend on downloading the experimental testing build
@@ -137,6 +139,7 @@ goto exit
 
 
 :archivinst
+cls
 echo Version Select
 echo Select the desired Archival version
 echo Allowed Inputs:
