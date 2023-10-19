@@ -60,6 +60,21 @@ if %s% == T goto t-uninstall
 if %s% == A goto a-uninstall
 if %s% == All goto uninstall
 if %s% == Al echo Wot mate?
+if %s% == SPICYPILLOW echo That won't work twice.
+if %s% == Josh goto exit
+if %s% == josh goto exit
+if %s% == PhoneticDragon goto exit
+if %s% == Phoneticdragon goto exit
+if %s% == phoneticDragon goto exit
+if %s% == phoneticdragon goto exit
+if %s% == Phonetic goto exit
+if %s% == phonetic goto exit
+if %s% == Dragon goto exit
+if %s% == dragon goto exit
+if %s% == PD goto exit
+if %s% == Pd goto exit
+if %s% == pD goto exit
+if %s% == pd goto exit
 
 :m-uninstall
 if exist "c:\Proxima" (
