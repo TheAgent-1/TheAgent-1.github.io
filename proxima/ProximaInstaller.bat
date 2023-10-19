@@ -1,6 +1,7 @@
 @echo off
 :main-screen
 title Proxima Installer
+cls
 echo Proxima Installer
 echo (I)nstall or (U)ninstall?
 echo If you wish to close, please exit this window
@@ -60,7 +61,6 @@ if %s% == T goto t-uninstall
 if %s% == A goto a-uninstall
 if %s% == All goto uninstall
 if %s% == Al echo Wot mate?
-if %s% == SPICYPILLOW echo That won't work twice.
 if %s% == Josh goto exit
 if %s% == josh goto exit
 if %s% == PhoneticDragon goto exit
@@ -102,6 +102,7 @@ echo Input is: %s%
 if %s% == Y goto testinst
 if %s% == A goto archivinst
 if %s% == N goto main-screen
+if %s% == SPICYPILLOW echo That won't work twice.
 
 
 :testinst
@@ -228,6 +229,12 @@ if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*" (
     del /q "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*"
 )
 cls
+goto exit
+
+
+:meme-install
+echo What have you done...
+timeout /t 10 /nobreak
 goto exit
 
 :exit
