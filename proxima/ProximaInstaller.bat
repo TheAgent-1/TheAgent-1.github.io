@@ -1,4 +1,6 @@
 @echo off
+:: ==========================================================================
+:: Main Screen
 :main-screen
 title Proxima Installer
 cls
@@ -13,23 +15,25 @@ echo Input is: %s%
 if %s% == I goto install
 if %s% == U goto uninst-confirm
 if %s% == SPICYPILLOW goto confirm
-if %s% == Josh goto meme-instance
-if %s% == josh goto meme-instance
-if %s% == PhoneticDragon goto meme-instance
-if %s% == Phoneticdragon goto meme-instance
-if %s% == phoneticDragon goto meme-instance
-if %s% == phoneticdragon goto meme-instance
-if %s% == Phonetic goto meme-instance
-if %s% == phonetic goto meme-instance
-if %s% == Dragon goto meme-instance
-if %s% == dragon goto meme-instance
-if %s% == PD goto meme-instance
-if %s% == Pd goto meme-instance
-if %s% == pD goto meme-instance
-if %s% == pd goto meme-instance
+:: if %s% == Josh goto meme-instance
+:: if %s% == josh goto meme-instance
+:: if %s% == PhoneticDragon goto meme-instance
+:: if %s% == Phoneticdragon goto meme-instance
+:: if %s% == phoneticDragon goto meme-instance
+:: if %s% == phoneticdragon goto meme-instance
+:: if %s% == Phonetic goto meme-instance
+:: if %s% == phonetic goto meme-instance
+:: if %s% == Dragon goto meme-instance
+:: if %s% == dragon goto meme-instance
+:: if %s% == PD goto meme-instance
+:: if %s% == Pd goto meme-instance
+:: if %s% == pD goto meme-instance
+:: if %s% == pd goto meme-instance
+:: ==========================================================================
 
 
-
+:: ==========================================================================
+:: INSTALL MAIN
 :install
 if not exist "c:\Proxima" (
 mkdir "c:\Proxima"
@@ -59,8 +63,10 @@ mklink %USERPROFILE%\Desktop\Proxima "C:\Proxima\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: UNINSTALL
 :uninst-confirm
 cls
 echo Confirmation?
@@ -73,23 +79,26 @@ echo Input is: %s%
 if %s% == M goto m-uninstall
 if %s% == T goto t-uninstall
 if %s% == A goto a-uninstall
-if %s% == All goto uninstall
-if %s% == Al echo Wot mate?
-if %s% == Josh goto meme-instance
-if %s% == josh goto meme-instance
-if %s% == PhoneticDragon goto meme-instance
-if %s% == Phoneticdragon goto meme-instance
-if %s% == phoneticDragon goto meme-instance
-if %s% == phoneticdragon goto meme-instance
-if %s% == Phonetic goto meme-instance
-if %s% == phonetic goto meme-instance
-if %s% == Dragon goto meme-instance
-if %s% == dragon goto meme-instance
-if %s% == PD goto meme-instance
-if %s% == Pd goto meme-instance
-if %s% == pD goto meme-instance
-if %s% == pd goto meme-instance
+if %s% == All goto all-uninstall
+if %s% == Al echo Try Again
+:: if %s% == Josh goto meme-instance
+:: if %s% == josh goto meme-instance
+:: if %s% == PhoneticDragon goto meme-instance
+:: if %s% == Phoneticdragon goto meme-instance
+:: if %s% == phoneticDragon goto meme-instance
+:: if %s% == phoneticdragon goto meme-instance
+:: if %s% == Phonetic goto meme-instance
+:: if %s% == phonetic goto meme-instance
+:: if %s% == Dragon goto meme-instance
+:: if %s% == dragon goto meme-instance
+:: if %s% == PD goto meme-instance
+:: if %s% == Pd goto meme-instance
+:: if %s% == pD goto meme-instance
+::if %s% == pd goto meme-instance
+:: ==========================================================================
 
+:: ==========================================================================
+:: MAIN UNINSTALL
 :m-uninstall
 if exist "c:\Proxima" (
     rmdir /s /q "c:\Proxima"
@@ -100,8 +109,10 @@ if exist "%USERPROFILE%\Desktop\Proxima.*" (
 )
 cls
 goto exit
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: DEV CONFIRM
 :confirm
 cls
 echo Confirmation?
@@ -130,16 +141,16 @@ if %s% == PD goto meme-instance
 if %s% == Pd goto meme-instance
 if %s% == pD goto meme-instance
 if %s% == pd goto meme-instance
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: TEST INSTALLER
 :testinst
 if not exist "c:\Proxima-TEST" (
 mkdir "c:\Proxima-TEST"
 echo Proxima-TEST path made
 )
 cd "c:\Proxima-TEST"
-
-
 
 if not exist "main.py" (
 curl.exe -o main.py https://raw.githubusercontent.com/TheAgent-1/Proxima/test/main.py
@@ -161,8 +172,10 @@ mklink %USERPROFILE%\Desktop\Proxima-TEST "C:\Proxima-TEST\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: TEST UNINSTALLER
 :t-uninstall
 if exist "c:\Proxima-TEST" (
     rmdir /s /q "c:\Proxima-TEST"
@@ -173,8 +186,10 @@ if exist "%USERPROFILE%\Desktop\Proxima-TEST.*" (
 )
 cls
 goto exit
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: ARCHIVE INSTALL SELECTION
 :archivinst
 cls
 echo Version Select
@@ -186,22 +201,24 @@ set /p s= Input:
 echo Input is: %s%
 
 if %s% == 1-1 goto 1-1
-if %s% == Josh goto meme-instance
-if %s% == josh goto meme-instance
-if %s% == PhoneticDragon goto meme-instance
-if %s% == Phoneticdragon goto meme-instance
-if %s% == phoneticDragon goto meme-instance
-if %s% == phoneticdragon goto meme-instance
-if %s% == Phonetic goto meme-instance
-if %s% == phonetic goto meme-instance
-if %s% == Dragon goto meme-instance
-if %s% == dragon goto meme-instance
-if %s% == PD goto meme-instance
-if %s% == Pd goto meme-instance
-if %s% == pD goto meme-instance
-if %s% == pd goto meme-instance
+:: if %s% == Josh goto meme-instance
+:: if %s% == josh goto meme-instance
+:: if %s% == PhoneticDragon goto meme-instance
+:: if %s% == Phoneticdragon goto meme-instance
+:: if %s% == phoneticDragon goto meme-instance
+:: if %s% == phoneticdragon goto meme-instance
+:: if %s% == Phonetic goto meme-instance
+:: if %s% == phonetic goto meme-instance
+:: if %s% == Dragon goto meme-instance
+:: if %s% == dragon goto meme-instance
+:: if %s% == PD goto meme-instance
+:: if %s% == Pd goto meme-instance
+:: if %s% == pD goto meme-instance
+:: if %s% == pd goto meme-instance
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: ARCHIVE 1-1 INSTALL
 :1-1
 if not exist "c:\Proxima-ARCHIVE" (
 mkdir "c:\Proxima-ARCHIVE"
@@ -231,8 +248,10 @@ mklink %USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1 "C:\Proxima-ARCHIVE\main.py"
 echo made shortcut on Desktop
 cls
 goto exit
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: ARCHIVE 1-1 UNINSTALL
 :a-1-1-uninstall
 if exist "c:\Proxima-ARCHIVE-1-1" (
     rmdir /s /q "c:\Proxima-ARCHIVE-1-1"
@@ -243,9 +262,11 @@ if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-1.*" (
 )
 cls
 goto exit
+:: ==========================================================================
 
-
-:uninstall
+:: ==========================================================================
+:: ALL UNINSTALL
+:all-uninstall
 if exist "c:\Proxima" (
     rmdir /s /q "c:\Proxima"
 )
@@ -287,14 +308,20 @@ if exist "%USERPROFILE%\Desktop\Proxima-ARCHIVE-1-3.*" (
 )
 cls
 goto exit
+:: ==========================================================================
 
-
+:: ==========================================================================
+:: JOSH'S MEME SECTION
 :meme-instance
 title Impending Doom...
 cls
 echo What have you done...
 timeout /t 10 /nobreak
 goto exit
+:: ==========================================================================
 
+:: ==========================================================================
+:: EXIT
 :exit
 cls
+:: ==========================================================================
