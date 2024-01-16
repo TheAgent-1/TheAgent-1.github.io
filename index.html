@@ -10,10 +10,25 @@
 </head>
 
 <body>
-    <h1 id="Title">TheAgent-1's Personal Site</h1>
-    <div>
-        <a href="https://theagent-1.github.io/SweetTreatTrials/"><button>Food reveiw</button></a>
-        <a href="https://levelupfusion.github.io"><Button>levelupfusion</Button></a>
+    <header>
+        <h1 id="Title">About Me - Jacob (Ghost)</h1>
+    </header>
+
+    <section>
+        <p id="About">Hello, I'm Jacob, also known as Ghost. I'm currently a student in the field of IT, with a deep
+            passion for
+            gaming, coding, and electronics. On this platform, I showcase various projects where I merge my love for
+            technology with a creative and
+            hands-on approach. I am proud to have achieved the first position in my class for creating a
+            remote-controlled rocket launcher
+            platform, utilizing the Arduino platform to bring my ideas to life. My guiding principle is simple but
+            effective: "If it's not broken, don't try to fix it." Join me on this
+            journey of innovation and exploration as I continue to develop and perfect working solutions that bridge the
+            gap between imagination and reality.</p>
+    </section>
+
+    <div style="padding-left: 10px;">
+        <h3>Projects</h3>
         <a href="/proxima/proxima.html"><button>Proxima Voice Assistant</button></a>
         <a href="/cashcounter/cashcounter.html"><button>Cash Counter</button></a>
     </div>
@@ -24,16 +39,31 @@
 
 
 <style>
+    html {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     #Title {
         text-align: center;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    #About {
+        padding: 10px;
     }
 
     Button {
-        border-radius: 10;
-        color: #990000;
-        border-color: black;
-        background-color: aliceblue;
+        padding: 10px 24px;
+        border-radius: 8px;
+        border-color: #282828;
+        background-color: #282828;
+        color: #f8f8f8f8;
         font-size: large;
+        transition-duration: 0.4s;
+    }
+
+    Button:hover {
+        background-color: #f8f8f8f8;
+        color: #282828;
     }
 </style>
